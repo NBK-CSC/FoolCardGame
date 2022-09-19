@@ -4,10 +4,13 @@ using UnityEngine.EventSystems;
 
 namespace DragHandlers
 {
-    public class DragHandlerObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class MoverCardInHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         private RectTransform _rectTransform;
         private Vector2 _startPosition;
+
+        public event Action DragHandlerBegun;
+        public event Action DragHandlerEnded;
         
         private void Awake()
         {
@@ -17,6 +20,7 @@ namespace DragHandlers
         public void OnBeginDrag(PointerEventData touch)
         {
             _startPosition = _rectTransform.anchoredPosition;
+            DragHandlerBegun?.Invoke();
         }
 
         public void OnDrag(PointerEventData touch)
@@ -27,6 +31,7 @@ namespace DragHandlers
         public void OnEndDrag(PointerEventData touch)
         {
             _rectTransform.anchoredPosition = _startPosition;
+            DragHandlerEnded?.Invoke();
         }
 
         private void Transform(Vector2 delta)
