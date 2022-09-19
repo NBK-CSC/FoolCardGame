@@ -1,4 +1,4 @@
-﻿namespace Card
+﻿namespace Cards
 {
     public enum Suit
     {
