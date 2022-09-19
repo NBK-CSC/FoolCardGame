@@ -2,14 +2,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Card
+namespace DragHandlers
 {
     public class DragHandlerObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         private RectTransform _rectTransform;
         private Vector2 _startPosition;
         
-        private void Start()
+        private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
         }
