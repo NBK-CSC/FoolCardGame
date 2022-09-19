@@ -38,12 +38,12 @@ namespace Hands
             CardTakenAway?.Invoke(data);
         }
         
-        public void TakeAwayCard(ICardData data1, ICardData data2)
+        public void TakeAwayCard(ICardData data, ICardData ourCardData)
         {
-            if (!_table.TryTakeCard(data1, data2, _playing.State))
+            if (!_table.TryTakeCard(data, ourCardData, _playing.State))
                 return;
-            _cards.Remove(data1);
-            CardTakenAway?.Invoke(data1);
+            _cards.Remove(ourCardData);
+            CardTakenAway?.Invoke(ourCardData);
         }
 
         public bool IsNeedGetCard()

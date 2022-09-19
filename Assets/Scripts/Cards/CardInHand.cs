@@ -60,7 +60,7 @@ namespace Cards
 
         public void TryBeat(ICardData beatingCardData)
         {
-            ToBeatTried?.Invoke(_data, beatingCardData);
+            ToBeatTried?.Invoke(beatingCardData, _data);
         }
     }
 }
