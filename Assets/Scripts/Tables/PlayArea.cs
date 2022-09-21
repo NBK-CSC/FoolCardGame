@@ -10,7 +10,7 @@ using Views;
 namespace Tables
 {
     [RequireComponent(typeof(TableDetect))]
-    public class PlayArea : View<CardInTable>
+    public class PlayArea : ViewReceivingCards<CardInTable>
     {
         [SerializeField] private int _numberColumns;
         [SerializeField] private float _xDistanceBetweenCards;
@@ -58,7 +58,7 @@ namespace Tables
                     
                     var upperCardTransform = _upperCards[i * _numberColumns + j].transform;
                     upperCardTransform.localPosition = position + new Vector3(_xPaddingUpperCard, 0, 0);
-                    upperCardTransform.rotation = Quaternion.Euler(0, 0, -10);
+                    upperCardTransform.rotation = Quaternion.Euler(0, 0, -4);
                 }
             }
         }

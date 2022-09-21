@@ -7,7 +7,7 @@ using Views;
 
 namespace Hands
 {
-    public class HandView : View<CardInHand>
+    public class HandView : ViewReceivingCards<CardInHand>
     {
         [SerializeField] private RectTransform _cardYPositionInHand;
         [Range(0f, 1f)][SerializeField] private float _screenPadding;

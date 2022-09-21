@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using Cards;
 using States;
-using UnityEngine;
 
 namespace Tables
 {
-    public class Table
+    public class Table : ITable
     {
         private List<ICardData> _lowerCards;
         private ICardData[] _upperCards;
-        private readonly Suit _trump;
+
+        public Suit Trump { get; set; }
 
         public event Action<ICardData> OnCardLaid;
         public event Action<ICardData, int> OnCardBeaten;
         
-        public Table(Suit trump)
+        public Table()
         {
-            _trump = trump;
-            
             _lowerCards = new List<ICardData>();
             _upperCards = new ICardData[6];
         }
@@ -46,7 +44,7 @@ namespace Tables
         {
             if (lowerCard.Suit == upperCard.Suit ) 
                 return lowerCard.Seniority < upperCard.Seniority;
-            return upperCard.Suit == _trump;
+            return upperCard.Suit == Trump;
         }
     }
 }

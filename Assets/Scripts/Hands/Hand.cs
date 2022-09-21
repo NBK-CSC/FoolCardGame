@@ -10,13 +10,13 @@ namespace Hands
     public class Hand : IGivingCard
     {
         private List<ICardData> _cards;
-        private Table _table;
+        private ITable _table;
         private IPlaying _playing;
         
         public event Action<ICardData> CardGiven;
         public event Action<ICardData> CardTakenAway;
 
-        public Hand(IPlaying playing, Table table)
+        public Hand(IPlaying playing, ITable table)
         {
             _playing = playing;
             _table = table;
@@ -46,8 +46,9 @@ namespace Hands
             CardTakenAway?.Invoke(ourCardData);
         }
 
-        public bool IsNeedGetCard()
+        public bool IsNeedGetCard(out int number)
         {
+            number = 6 - _cards.Count; 
             return _cards.Count < 6;
         }
     }
