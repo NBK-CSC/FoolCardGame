@@ -8,24 +8,12 @@ namespace Cards
     [RequireComponent(typeof(MoverCardInHand))]
     public class CardInHand : Card, ILaying, IBeating
     {
-        private Image _image;
-        private ICardData _data;
         private MoverCardInHand _mover;
-        public override ICardData Data => _data;
-        
+
         public event Action<ICardData> ToLayTried;
         public event Action<ICardData, ICardData> ToBeatTried;
 
-        public override void Init(ICardData data)
-        {
-            if (_data != null)
-                throw new ArgumentException();
-
-            _data = data;
-            _image.sprite = _data.Sprite;
-        }
-
-        private void Awake()
+        protected override void SetAwakeSettings()
         {
             _image = GetComponent<Image>();
             _mover = GetComponent<MoverCardInHand>();
@@ -39,7 +27,7 @@ namespace Cards
 
         private void OnDisable()
         {
-            _data = null;
+            Data = null;
             _image.sprite = null;
         }
 
@@ -60,7 +48,7 @@ namespace Cards
 
         public void TryBeat(ICardData beatingCardData)
         {
-            ToBeatTried?.Invoke(beatingCardData, _data);
+            ToBeatTried?.Invoke(beatingCardData, Data);
         }
     }
 }
