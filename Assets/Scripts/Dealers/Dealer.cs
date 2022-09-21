@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cards;
+using UnityEngine;
+using Random = System.Random;
 
 namespace Dealers
 {
@@ -13,26 +15,29 @@ namespace Dealers
         private Random _random = new Random();
 
         public ICardData TrumpCard { get; private set; }
+        public event Action<ICardData> OnTrumpCardSet;
 
         public Dealer(int numberCardsInPack, IEnumerable<ICardData> cardsData)
         {
             _numberCardsInPack = numberCardsInPack;
             _cardsData = cardsData.ToList();
             _pack=new Queue<ICardData>();
-            
-            ShuffleCards();
         }
 
         private ICardData RandomlyPlaceCard()
         {
-            return _cardsData[_random.Next(_cardsData.Count)];
+            var index = _random.Next(_cardsData.Count);
+            var removeCard= _cardsData[index];
+            _cardsData.RemoveAt(index);
+            return removeCard;
         }
 
-        private void ShuffleCards()
+        public void ShuffleCards()
         {
             for(var i=0;i<_numberCardsInPack;i++)
                 _pack.Enqueue(RandomlyPlaceCard());
             TrumpCard = _pack.Dequeue();
+            OnTrumpCardSet?.Invoke(TrumpCard);
             _pack.Enqueue(TrumpCard);
         }
 
