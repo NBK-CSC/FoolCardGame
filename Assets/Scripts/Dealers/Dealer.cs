@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cards;
 using UnityEngine;
 using Random = System.Random;
@@ -20,7 +19,7 @@ namespace Dealers
         public Dealer(int numberCardsInPack, IEnumerable<ICardData> cardsData)
         {
             _numberCardsInPack = numberCardsInPack;
-            _cardsData = cardsData.ToList();
+            _cardsData = new List<ICardData>(cardsData);
             _pack=new Queue<ICardData>();
         }
 
