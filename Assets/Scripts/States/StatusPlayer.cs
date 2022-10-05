@@ -2,7 +2,10 @@
 {
     public enum StatusPlayer
     {
-        Thrower,
-        Defender
+        ThrowerDisabled,
+        ThrowerActivating,
+        ThrowerWaiting,
+        DefenderActivating,
+        DefenderWaiting
     }
 }

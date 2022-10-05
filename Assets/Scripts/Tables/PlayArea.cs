@@ -16,6 +16,8 @@ namespace Tables
         [SerializeField] private float _xDistanceBetweenCards;
         [SerializeField] private float _yDistanceBetweenCards;
         [SerializeField] private float _xPaddingUpperCard;
+        [SerializeField] private float _angleRotationBeatingCard;
+        
         
         private CardInTable[] _upperCards;
         
@@ -58,7 +60,7 @@ namespace Tables
                     
                     var upperCardTransform = _upperCards[i * _numberColumns + j].transform;
                     upperCardTransform.localPosition = position + new Vector3(_xPaddingUpperCard, 0, 0);
-                    upperCardTransform.rotation = Quaternion.Euler(0, 0, -4);
+                    upperCardTransform.rotation = Quaternion.Euler(0, 0, _angleRotationBeatingCard);
                 }
             }
         }

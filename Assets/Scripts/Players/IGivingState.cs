@@ -2,8 +2,8 @@
 
 namespace Players
 {
-    public interface IPlaying
+    public interface IGivingState
     {
-        public StatusPlayer State { get;}
+        public StatusPlayer Status { get; }
     }
 }

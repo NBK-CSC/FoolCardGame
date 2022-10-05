@@ -1,26 +1,36 @@
-﻿using Dealers;
+﻿using System;
+using Cards;
+using Dealers;
 using Hands;
+using Matches;
 using States;
 using Tables;
 using UnityEngine;
 
 namespace Players
 {
-    public class Player : MonoBehaviour, IPlaying
+    public class Player : MonoBehaviour, IPlaying, IGettingSmallestTrumpCard, IGivingState
     {
         [SerializeField] private HandView _view;
         
-        private IGetterCard _dealer;
-        public Hand _hand;
+        private Hand _hand;
         private HandPresenter _presenter;
-        private Table _table;
+        
+        private IGetterCard _dealer;
+        private ITakingCard _table;
+        private IGettingState _getterState;
+        private IStepping _step;
 
-        [field:SerializeField] public StatusPlayer State { get; set; }
+        public event Action<IPlaying> Proceed;
 
-        public void Init(IGetterCard dealer, Table table)
+        [field:SerializeField] public StatusPlayer Status { get; private set; }
+
+        public void Init(IGetterCard dealer, ITakingCard table, IGettingState getterState, IStepping step)
         {
             _dealer = dealer;
             _table = table;
+            _getterState = getterState;
+            _step = step;
             
             _hand = new Hand(this, _table);
             _presenter = new HandPresenter(_hand, _view);
@@ -29,17 +39,41 @@ namespace Players
         public void Enable()
         {
             _presenter.Enable();
+            _getterState.OnStatusChanged += ChangeStatus;
+            _step.StepBegun += GiveCards;
         }
 
         public void Disable()
         {
             _presenter.Disable();
+            _getterState.OnStatusChanged -= ChangeStatus;
+            _step.StepBegun -= GiveCards;
+        }
+        
+        public bool TryGetSmallestTrumpCard(out ICardData resultCard)
+        {
+            resultCard = null;
+            foreach (var card in _hand.Cards)
+                if (card.Suit == _dealer.TrumpCard.Suit
+                    && (resultCard == null || card.Seniority < resultCard.Seniority))
+                    resultCard = card;
+            
+            return resultCard != null;
+        }
+        
+        private void ChangeStatus()
+        {
+            Status = _getterState.GetStatus(this);
         }
 
-        private void GiveCard()
+        private void GiveCards()
         {
-            if (_hand.IsNeedGetCard() && _dealer.TryGiveCard(out var card))
-                _hand.GiveCard(card);
+            if (!_hand.IsNeedGetCard(out var number)) return;
+            for (var i = 0; i < number; i++)
+                if (_dealer.TryGiveCard(out var card))
+                    _hand.GiveCard(card);
+                else
+                    break;
         }
     }
 }

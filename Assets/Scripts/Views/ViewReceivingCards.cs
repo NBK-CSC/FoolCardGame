@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Views
 {
-    public abstract class View <T>: MonoBehaviour where T : Card
+    public abstract class ViewReceivingCards <T>: MonoBehaviour where T : Card
     {
         [SerializeField] protected GameObject _cardsContainer;
         [SerializeField] protected T _cardPrefab;
