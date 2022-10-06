@@ -28,18 +28,18 @@ namespace Matches
         
         public void Enable()
         {
-            _stateChanger.OnStatusChanged += UnmarkProceedPlayers;
-            _stateChanger.OnStatusChanged += SetNumberNeedProceed;
+            _stateChanger.OnStatusesChanged += UnmarkProceedPlayers;
+            _stateChanger.OnStatusesChanged += SetNumberNeedProceed;
             foreach (var player in _getter.ActivePlayers)
-                player.Proceed += MarkProceedPlayers;
+                player.Proceeded += MarkProceedPlayers;
         }
         
         public void Disable()
         {
-            _stateChanger.OnStatusChanged -= UnmarkProceedPlayers;
-            _stateChanger.OnStatusChanged -= SetNumberNeedProceed;
+            _stateChanger.OnStatusesChanged -= UnmarkProceedPlayers;
+            _stateChanger.OnStatusesChanged -= SetNumberNeedProceed;
             foreach (var player in _getter.ActivePlayers)
-                player.Proceed -= MarkProceedPlayers;
+                player.Proceeded -= MarkProceedPlayers;
         }
 
         public void Start()

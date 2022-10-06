@@ -16,7 +16,7 @@ namespace States
         public IGettingSmallestTrumpCard Defender { get; private set; }
         public StepStatus StepStatus { get; private set; }
 
-        public event Action OnStatusChanged;
+        public event Action OnStatusesChanged;
 
         public StateChanger(IEnumerable<IGettingSmallestTrumpCard> players, ICardChangeable table)
         {
@@ -79,7 +79,7 @@ namespace States
             Defender = _players[indexDefender];
             _statusesPlayers[Defender] = StatusPlayer.DefenderWaiting;
             
-            OnStatusChanged?.Invoke();
+            OnStatusesChanged?.Invoke();
         }
 
         private void SetStatusesDefault()

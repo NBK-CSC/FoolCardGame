@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 1638670704}
-  <State>k__BackingField: 0
+  <Status>k__BackingField: 1
 --- !u!4 &991541813
 Transform:
   m_ObjectHideFlags: 0

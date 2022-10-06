@@ -5,7 +5,7 @@ namespace States
 {
     public interface IGettingState
     {
-        public event Action OnStatusChanged;
+        public event Action OnStatusesChanged;
         public StatusPlayer GetStatus(IGettingSmallestTrumpCard player);
     }
 }
