@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Status",
+    "rootNamespace": "FoolCardGame.Status",
+    "references": ["GUID:a66ea4fcd2db33f40912cf5daa46327b","GUID:a874d07a42df5324192df86710720162","GUID:f4c5fbbda48bca04c9565bdeb556cdcc","GUID:45d58823e05921b4b8f5e65aa5eb0cea","GUID:387769a4dd13f234d9aec8a598f2dea8","GUID:6cb6f25cd51b2574ab122d2d925bc4a6","GUID:32753a6e0ebd7f44599d2adfb90d5a8e"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

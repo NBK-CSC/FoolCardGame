@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using FoolCardGame.Card.Behaviours;
+using FoolCardGame.Behaviours;
 using FoolCardGame.Card.Models;
 using FoolCardGame.Dealer.Controllers;
 using FoolCardGame.Dealer.Views;

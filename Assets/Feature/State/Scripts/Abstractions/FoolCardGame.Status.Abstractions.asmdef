@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Status.Abstractions",
+    "rootNamespace": "FoolCardGame.Status.Abstractions",
+    "references": ["GUID:a874d07a42df5324192df86710720162","GUID:45d58823e05921b4b8f5e65aa5eb0cea","GUID:387769a4dd13f234d9aec8a598f2dea8"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

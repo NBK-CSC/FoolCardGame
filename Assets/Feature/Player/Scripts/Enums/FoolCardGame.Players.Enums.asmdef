@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Player.Enums",
+    "rootNamespace": "FoolCardGame.Player.Enums",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

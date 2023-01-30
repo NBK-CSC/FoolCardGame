@@ -1,0 +1,18 @@
+{
+    "name": "FoolCardGame.Card",
+    "rootNamespace": "FoolCardGame.Card",
+    "references": [
+        "GUID:6cb6f25cd51b2574ab122d2d925bc4a6",
+        "GUID:32753a6e0ebd7f44599d2adfb90d5a8e",
+        "GUID:628fa534e8fa3b544825580d8cffa994",
+        "GUID:0160d2b02ecbc154f956c16d89c5feea"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

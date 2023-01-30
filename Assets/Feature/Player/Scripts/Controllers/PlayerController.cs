@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using FoolCardGame.Behaviours;
 using FoolCardGame.Card.Abstractions.Models;
-using FoolCardGame.Card.Behaviours;
-using FoolCardGame.Card.Controllers;
-using FoolCardGame.Card.Views;
 using FoolCardGame.Dealer.Abstractions.Controllers;
 using FoolCardGame.Hand.Controllers;
 using FoolCardGame.Hand.Views;

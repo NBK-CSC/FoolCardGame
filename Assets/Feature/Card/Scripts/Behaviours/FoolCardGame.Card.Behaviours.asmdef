@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Card.Behaviours",
+    "rootNamespace": "FoolCardGame.Card.Behaviours",
+    "references": ["GUID:628fa534e8fa3b544825580d8cffa994","GUID:6cb6f25cd51b2574ab122d2d925bc4a6"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Hand",
+    "rootNamespace": "FoolCardGame.Hand",
+    "references": ["GUID:e1ad7bb129dc9294db54c721142ceedb","GUID:f4c5fbbda48bca04c9565bdeb556cdcc","GUID:a874d07a42df5324192df86710720162","GUID:6cb6f25cd51b2574ab122d2d925bc4a6","GUID:8cb9f9f118d61624dab9c40fded2713c","GUID:45d58823e05921b4b8f5e65aa5eb0cea","GUID:3ea0be1b18f160a4da11e92cde1ec610"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

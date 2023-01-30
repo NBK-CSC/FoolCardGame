@@ -1,0 +1,16 @@
+{
+    "name": "FoolCardGame.Card.Abstractions.Behaviours",
+    "rootNamespace": "FoolCardGame.Card.Abstractions.Behaviours",
+    "references": [
+        "GUID:3ea0be1b18f160a4da11e92cde1ec610",
+        "GUID:6cb6f25cd51b2574ab122d2d925bc4a6"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

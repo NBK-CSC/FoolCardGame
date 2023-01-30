@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Player",
+    "rootNamespace": "FoolCardGame.Player",
+    "references": ["GUID:f4c5fbbda48bca04c9565bdeb556cdcc","GUID:c49ed9fd1df40f24d831d62e4197c818","GUID:50f595e9be9dd824b8a43949b275c5ea","GUID:3ea0be1b18f160a4da11e92cde1ec610","GUID:a874d07a42df5324192df86710720162","GUID:a66ea4fcd2db33f40912cf5daa46327b","GUID:b19edfba3f064f8448b95645b72fe85f","GUID:45d58823e05921b4b8f5e65aa5eb0cea","GUID:6cb6f25cd51b2574ab122d2d925bc4a6","GUID:81d39797c22231847ac6c3393db1ccff","GUID:e1ad7bb129dc9294db54c721142ceedb","GUID:8cb9f9f118d61624dab9c40fded2713c","GUID:32753a6e0ebd7f44599d2adfb90d5a8e"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

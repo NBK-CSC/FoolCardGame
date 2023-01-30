@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Round",
+    "rootNamespace": "FoolCardGame.Round",
+    "references": ["GUID:b19edfba3f064f8448b95645b72fe85f","GUID:66e9e863594caf24dbc25d2d983b6909","GUID:a66ea4fcd2db33f40912cf5daa46327b","GUID:a874d07a42df5324192df86710720162","GUID:387769a4dd13f234d9aec8a598f2dea8"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

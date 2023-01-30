@@ -1,12 +1,11 @@
 ﻿using System;
-using FoolCardGame.Behaviours;
 using FoolCardGame.Card.Abstractions.Behaviours;
 using FoolCardGame.Card.Abstractions.Models;
 using FoolCardGame.Card.Controllers;
 using FoolCardGame.Card.Views;
 using UnityEngine;
 
-namespace FoolCardGame.Card.Behaviours
+namespace FoolCardGame.Behaviours
 {
     /// <summary>
     /// Фабрика карт

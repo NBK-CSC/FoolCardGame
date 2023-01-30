@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using FoolCardGame.Card.Abstractions.Behaviours;
 using FoolCardGame.Card.Abstractions.Controllers;
 using FoolCardGame.Card.Abstractions.Models;
-using FoolCardGame.Card.Behaviours;
-using FoolCardGame.Card.Controllers;
 using FoolCardGame.Card.Enums;
-using FoolCardGame.Card.Views;
 using FoolCardGame.Player.Enums;
 using FoolCardGame.Table.Abstractions.Controllers;
 using FoolCardGame.Table.Abstractions.Views;
-using FoolCardGame.Table.Views;
-using UnityEngine;
 
 namespace FoolCardGame.Table.Controllers
 {
@@ -56,7 +51,8 @@ namespace FoolCardGame.Table.Controllers
         public bool TryTakeCard(ICardModel lowerCard, PlayerStatus playerStatus)
         {
             if ((playerStatus != PlayerStatus.ThrowerActive
-                 && playerStatus != PlayerStatus.ThrowerPassive)
+                 && playerStatus != PlayerStatus.ThrowerPassive
+                 && playerStatus != PlayerStatus.ThrowerEnabled)
                 || _lowerCards.Count == 6)
                 return false;
             var newController = _cardsCreator.CreateCardOnTable(lowerCard);

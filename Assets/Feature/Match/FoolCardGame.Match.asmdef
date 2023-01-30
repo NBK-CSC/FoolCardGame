@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Match",
+    "rootNamespace": "FoolCardGame.Match",
+    "references": ["GUID:66e9e863594caf24dbc25d2d983b6909","GUID:3ea0be1b18f160a4da11e92cde1ec610","GUID:a8e33b9635b276a4c93ea083a7657bfe","GUID:5990810032ecbd342bf580f03174dec6","GUID:ffbed16d05288744dae971407af50b49","GUID:b672517a31d65564599f66911efa9da2","GUID:e199f85984218f041941ba4aa6062bd7","GUID:a874d07a42df5324192df86710720162","GUID:81d39797c22231847ac6c3393db1ccff","GUID:c49ed9fd1df40f24d831d62e4197c818","GUID:6cb6f25cd51b2574ab122d2d925bc4a6","GUID:f4c5fbbda48bca04c9565bdeb556cdcc","GUID:8cb9f9f118d61624dab9c40fded2713c","GUID:a66ea4fcd2db33f40912cf5daa46327b","GUID:b19edfba3f064f8448b95645b72fe85f","GUID:32753a6e0ebd7f44599d2adfb90d5a8e"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

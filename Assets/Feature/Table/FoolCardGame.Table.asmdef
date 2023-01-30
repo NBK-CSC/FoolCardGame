@@ -1,0 +1,21 @@
+{
+    "name": "FoolCardGame.Table",
+    "rootNamespace": "FoolCardGame.Table",
+    "references": [
+        "GUID:f4c5fbbda48bca04c9565bdeb556cdcc",
+        "GUID:6cb6f25cd51b2574ab122d2d925bc4a6",
+        "GUID:3ea0be1b18f160a4da11e92cde1ec610",
+        "GUID:45d58823e05921b4b8f5e65aa5eb0cea",
+        "GUID:628fa534e8fa3b544825580d8cffa994",
+        "GUID:8cb9f9f118d61624dab9c40fded2713c",
+        "GUID:32753a6e0ebd7f44599d2adfb90d5a8e"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
