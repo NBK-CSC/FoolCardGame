@@ -1,11 +1,11 @@
 ﻿using FoolCardGame.Network.Controllers;
 using FoolCardGame.Network.Enums;
-using FoolCardGame.Room.Abstractions.Controllers;
-using FoolCardGame.Room.Views;
-using FoolCardGamePlugin.Network;
+using FoolCardGame.Rooms.Abstractions.Controllers;
+using FoolCardGame.Rooms.Views;
+using FoolCardGame.Network;
 using UnityEngine;
 
-namespace FoolCardGame.Room.Controllers
+namespace FoolCardGame.Rooms.Controllers
 {
     /// <summary>
     /// Контроллер создание комнаты

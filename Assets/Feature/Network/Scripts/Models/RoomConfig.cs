@@ -1,6 +1,6 @@
 ﻿using DarkRift;
 
-namespace FoolCardGamePlugin.Network
+namespace FoolCardGame.Network
 {
     /// <summary>
     /// Структура комнаты

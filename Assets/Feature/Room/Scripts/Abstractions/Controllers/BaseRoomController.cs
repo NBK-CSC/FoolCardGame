@@ -3,7 +3,7 @@ using DarkRift.Client;
 using FoolCardGame.Network.Controllers;
 using FoolCardGame.Network.Enums;
 
-namespace FoolCardGame.Room.Abstractions.Controllers
+namespace FoolCardGame.Rooms.Abstractions.Controllers
 {
     /// <summary>
     /// Абстрактный класс комнаты

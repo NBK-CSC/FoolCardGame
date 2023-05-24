@@ -73,9 +73,9 @@ namespace FoolCardGame.Behaviours
             return createdObject;
         }
 
-        private bool TryGetObject(out T gameObject)
+        private bool TryGetObject(out T gameObject, bool isActiveInHierarchy)
         {
-            foreach (var mono in _pool.Where(mono => !mono.gameObject.activeInHierarchy))
+            foreach (var mono in _pool.Where(mono => isActiveInHierarchy ? !mono.gameObject.activeInHierarchy : !mono.gameObject.activeSelf))
             {
                 mono.gameObject.SetActive(true);
                 gameObject = mono;
@@ -90,9 +90,9 @@ namespace FoolCardGame.Behaviours
         /// </summary>
         /// <returns>Свободный объект</returns>
         /// <exception cref="Exception">Ошибка, что в пулле нет пустных объектов</exception>
-        public T GetFreeObject()
+        public T GetFreeObject(bool isActiveInHierarchy = true)
         {
-            if (TryGetObject(out var element))
+            if (TryGetObject(out var element, isActiveInHierarchy))
                 return element;
             if (AutoExpand)
                 return CreateObject();

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FoolCardGame.Room.Views
+namespace FoolCardGame.Rooms.Views
 {
     public class CreateRoomView : MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using DarkRift;
 
-namespace FoolCardGamePlugin.Network
+namespace FoolCardGame.Network
 {
     /// <summary>
     /// Данные комнаты

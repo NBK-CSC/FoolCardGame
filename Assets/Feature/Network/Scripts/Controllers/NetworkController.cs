@@ -2,7 +2,6 @@
 using System.Net;
 using DarkRift;
 using DarkRift.Client;
-using UnityEngine;
 
 namespace FoolCardGame.Network.Controllers
 {

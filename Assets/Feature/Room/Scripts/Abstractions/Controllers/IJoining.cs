@@ -1,4 +1,4 @@
-﻿namespace FoolCardGame.Room.Abstractions.Controllers
+﻿namespace FoolCardGame.Rooms.Abstractions.Controllers
 {
     /// <summary>
     /// Интерфес присоединения к комнате

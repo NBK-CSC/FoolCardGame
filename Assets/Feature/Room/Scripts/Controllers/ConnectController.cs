@@ -1,8 +1,8 @@
 ﻿using FoolCardGame.Network.Controllers;
-using FoolCardGame.Room.Views;
+using FoolCardGame.Rooms.Views;
 using UnityEngine;
 
-namespace FoolCardGame.Room.Controllers
+namespace FoolCardGame.Rooms.Controllers
 {
     /// <summary>
     /// Контроллер коннекта
@@ -28,6 +28,9 @@ namespace FoolCardGame.Room.Controllers
         {
             if (!NetworkController.Instance.Connect(address, port))
                 Debug.LogError("Не удалось подключиться к адресу");
+            else
+                Debug.LogError("Подключился");
+
         }
     }
 }

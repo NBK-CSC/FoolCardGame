@@ -1,17 +1,24 @@
 ﻿using FoolCardGame.Network.Controllers;
 using FoolCardGame.Network.Enums;
-using FoolCardGame.Room.Abstractions.Controllers;
-using FoolCardGamePlugin.Network;
+using FoolCardGame.Rooms.Abstractions.Controllers;
+using FoolCardGame.Network;
 using UnityEngine;
 
-namespace FoolCardGame.Room.Controllers
+namespace FoolCardGame.Rooms.Controllers
 {
     /// <summary>
     /// Контроллер присоединения к комнате
     /// </summary>
     public class JoinRoomController : BaseRoomController<RoomData>, IJoining
     {
+        private IRoomController _roomController;
+        
         protected override Tags Tag => Tags.JoinRoom;
+
+        public JoinRoomController(IRoomController roomController)
+        {
+            _roomController = roomController;
+        }
 
         public void Join(string id)
         {
@@ -25,6 +32,7 @@ namespace FoolCardGame.Room.Controllers
             if (string.IsNullOrEmpty(response.Config.Id) == false)
             {
                 Debug.LogWarning($"Присоединилось id={response.Config.Id} Name={response.Config.Name} Slots={response.Config.Slots}");
+                _roomController.UpdateRoomData(NetworkMessageController.Instance.LocalId, response);
                 return;
             }
             

@@ -14,6 +14,8 @@ namespace FoolCardGame.Network.Controllers
         
         public static NetworkMessageController Instance => _instance ??= new NetworkMessageController();
 
+        public string LocalId => NetworkController.Instance.Client.ID.ToString();
+
         private NetworkMessageController() { }
         
         /// <summary>
@@ -53,6 +55,14 @@ namespace FoolCardGame.Network.Controllers
             }
         }
         
+        public void SendMessage(Tags tag, SendMode sendMode = SendMode.Reliable)
+        {
+            using (Message message = Message.CreateEmpty((ushort)tag))
+            {
+                NetworkController.Instance.Client.SendMessage(message, sendMode);
+            }
+        }
+        
         /// <summary>
         /// Получения сообщения
         /// </summary>
@@ -60,7 +70,7 @@ namespace FoolCardGame.Network.Controllers
         /// <param name="e">Сообщение</param>
         /// <typeparam name="T">Тип</typeparam>
         /// <returns>Десериализованный сообщение</returns>
-        public T ReceiveMessage<T>(object? sender, MessageReceivedEventArgs e) where T : IDarkRiftSerializable, new()
+        public T ReceiveMessage<T>(object sender, MessageReceivedEventArgs e) where T : IDarkRiftSerializable, new()
         {
             return e.GetMessage().Deserialize<T>();
         }
