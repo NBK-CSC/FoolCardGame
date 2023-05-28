@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using FoolCardGame.Rooms.Abstractions.Controllers;
+using FoolCardGame.Rooms.Abstractions.Views;
 
 namespace FoolCardGame.Rooms.Views
 {

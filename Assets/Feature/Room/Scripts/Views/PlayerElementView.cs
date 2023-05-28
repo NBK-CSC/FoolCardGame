@@ -1,10 +1,13 @@
-﻿using FoolCardGame.Player.Abstractions.Views;
+﻿using FoolCardGame.Rooms.Abstractions.Views;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FoolCardGame.Player.Views
+namespace FoolCardGame.Rooms.Views
 {
-    public class PlayerView : AbstractPlayerView
+    /// <summary>
+    /// Вью элемента игрока
+    /// </summary>
+    public class PlayerElementView : AbstractPlayerElementView
     {
         [SerializeField] private Image icon;
         [SerializeField] private Image stateBackground;

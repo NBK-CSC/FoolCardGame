@@ -74,5 +74,16 @@ namespace FoolCardGame.Network.Controllers
         {
             return e.GetMessage().Deserialize<T>();
         }
+        
+        public T[] ReceiveMessages<T>(object sender, MessageReceivedEventArgs e) where T : IDarkRiftSerializable, new()
+        {
+            using (Message message = e.GetMessage())
+            {
+                using (DarkRiftReader reader = message.GetReader())
+                {
+                    return reader.ReadSerializables<T>();
+                }
+            }
+        }
     }
 }

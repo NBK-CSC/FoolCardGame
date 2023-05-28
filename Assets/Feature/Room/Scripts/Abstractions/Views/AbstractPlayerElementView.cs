@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace FoolCardGame.Player.Abstractions.Views
+namespace FoolCardGame.Rooms.Abstractions.Views
 {
-    public abstract class AbstractPlayerView : MonoBehaviour
+    public abstract class AbstractPlayerElementView : MonoBehaviour
     {
         public abstract void SetImage(byte[] image);
 

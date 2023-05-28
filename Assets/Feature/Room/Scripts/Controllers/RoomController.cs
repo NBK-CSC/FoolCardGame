@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FoolCardGame.Network;
-using FoolCardGame.Player.Abstractions.Views;
 using FoolCardGame.Rooms.Abstractions.Controllers;
+using FoolCardGame.Rooms.Abstractions.Views;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,14 +14,14 @@ namespace FoolCardGame.Rooms.Controllers
     public class RoomController : MonoBehaviour, IRoomController
     {
         [SerializeField] private int maxCount;
-        [SerializeField] private AbstractPlayerView playerView;
+        [SerializeField] private AbstractPlayerElementView playerElementView;
         [SerializeField] private Transform playersPanel;
         [SerializeField] private Transform roomCanvas;
         [SerializeField] private Transform connectCanvas;
         //TODO уброть во вью
         [SerializeField] private Text textNameRoom;
         
-        private PlayerListController _playerListController;
+        private ListPlayersController _listPlayersController;
         private RoomData _roomData;
         private string _localId;
         private bool _isUpdated = true;
@@ -29,7 +29,7 @@ namespace FoolCardGame.Rooms.Controllers
         
         private void Awake()
         {
-            _playerListController = new PlayerListController(maxCount, playerView, playersPanel);
+            _listPlayersController = new ListPlayersController(maxCount, playerElementView, playersPanel);
         }
 
         private void Update()
@@ -38,7 +38,7 @@ namespace FoolCardGame.Rooms.Controllers
             {
 
                 var listWithoutClient = new List<ClientData>(_roomData.Clients.Where(c => c.Id != _localId));
-                _playerListController.UpdateList(listWithoutClient);
+                _listPlayersController.UpdateList(listWithoutClient);
                 textNameRoom.text = _roomData.Config.Name;
                 _isUpdated = true;
             }

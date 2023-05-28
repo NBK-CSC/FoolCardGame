@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace FoolCardGame.Rooms.Views
 {
+    /// <summary>
+    /// Вью подключения
+    /// </summary>
     public class ConnectView : MonoBehaviour
     {
         [SerializeField] private Button connectButton;

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FoolCardGame.Behaviours;
 using FoolCardGame.Network;
-using FoolCardGame.Player.Abstractions.Views;
+using FoolCardGame.Rooms.Abstractions.Views;
 using UnityEngine;
 
 namespace FoolCardGame.Rooms.Controllers
@@ -10,10 +9,10 @@ namespace FoolCardGame.Rooms.Controllers
     /// <summary>
     /// Контроллер списка игроков
     /// </summary>
-    public class PlayerListController
+    public class ListPlayersController
     {
-        private readonly List<AbstractPlayerView> _list;
-        private readonly PoolMono<AbstractPlayerView> _pool;
+        private readonly List<AbstractPlayerElementView> _list;
+        private readonly PoolMono<AbstractPlayerElementView> _pool;
 
         /// <summary>
         /// Конструктор
@@ -21,10 +20,10 @@ namespace FoolCardGame.Rooms.Controllers
         /// <param name="count">Количество</param>
         /// <param name="prefab">Префаб игрока</param>
         /// <param name="parent">Родитель игрока</param>
-        public PlayerListController(int count, AbstractPlayerView prefab, Transform parent)
+        public ListPlayersController(int count, AbstractPlayerElementView prefab, Transform parent)
         {
-            _pool = new PoolMono<AbstractPlayerView>(count, prefab, parent);
-            _list = new List<AbstractPlayerView>();
+            _pool = new PoolMono<AbstractPlayerElementView>(count, prefab, parent);
+            _list = new List<AbstractPlayerElementView>();
             
             for (int i = 0; i < count; i++)
                 _list.Add(_pool.GetFreeObject(false));

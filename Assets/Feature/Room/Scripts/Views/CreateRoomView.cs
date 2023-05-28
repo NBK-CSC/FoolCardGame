@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace FoolCardGame.Rooms.Views
 {
+    /// <summary>
+    /// Вью создания комнаты
+    /// </summary>
     public class CreateRoomView : MonoBehaviour
     {
         [SerializeField] private InputField nameInputField;

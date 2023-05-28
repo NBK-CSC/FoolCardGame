@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FoolCardGame.Rooms.Abstractions.Controllers
+namespace FoolCardGame.Rooms.Abstractions.Views
 {
     /// <summary>
     /// Интерфейс вью покидания комнаты
