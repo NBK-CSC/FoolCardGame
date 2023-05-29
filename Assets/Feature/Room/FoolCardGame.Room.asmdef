@@ -1,0 +1,14 @@
+{
+    "name": "FoolCardGame.Room",
+    "rootNamespace": "FoolCardGame.Room",
+    "references": ["GUID:99e19e92a26f19940b046118b2bc208f","GUID:a874d07a42df5324192df86710720162","GUID:81d39797c22231847ac6c3393db1ccff","GUID:a8e33b9635b276a4c93ea083a7657bfe"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
