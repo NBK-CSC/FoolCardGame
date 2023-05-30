@@ -171,7 +171,7 @@ TextureImporter:
       213: -3136926902623889670
     second: cardsLarge_tilemap_packed_55
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -188,10 +188,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -230,6 +232,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -269,6 +273,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1468,9 +1484,65 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      cardsLarge_tilemap_packed_32: -1432368047391100315
+      cardsLarge_tilemap_packed_37: -1624140049081850684
+      cardsLarge_tilemap_packed_53: 672695021346455442
+      cardsLarge_tilemap_packed_40: -4754543911665267707
+      cardsLarge_tilemap_packed_52: -293574064648097353
+      cardsLarge_tilemap_packed_21: 4739823074437157865
+      cardsLarge_tilemap_packed_31: 4719886470123052730
+      cardsLarge_tilemap_packed_23: 4944396216633559938
+      cardsLarge_tilemap_packed_38: 5584410718173921235
+      cardsLarge_tilemap_packed_11: 8840498441845326581
+      cardsLarge_tilemap_packed_17: -6160194328686772962
+      cardsLarge_tilemap_packed_42: -327829272234997075
+      cardsLarge_tilemap_packed_8: 2288646753789159469
+      cardsLarge_tilemap_packed_44: -493076360996769775
+      cardsLarge_tilemap_packed_49: -570867715672363667
+      cardsLarge_tilemap_packed_27: -8632666280572087656
+      cardsLarge_tilemap_packed_43: 284772752910288393
+      cardsLarge_tilemap_packed_28: -1899543482855112477
+      cardsLarge_tilemap_packed_14: -6705875103644733098
+      cardsLarge_tilemap_packed_45: 7245408098271151325
+      cardsLarge_tilemap_packed_55: -3136926902623889670
+      cardsLarge_tilemap_packed_16: -2681796581943152890
+      cardsLarge_tilemap_packed_20: 6489521018947743740
+      cardsLarge_tilemap_packed_34: -2707713847965521280
+      cardsLarge_tilemap_packed_19: 1964670721771618084
+      cardsLarge_tilemap_packed_13: 5025554018334775678
+      cardsLarge_tilemap_packed_7: 1129483705786194621
+      cardsLarge_tilemap_packed_22: -2239906934269244640
+      cardsLarge_tilemap_packed_0: -2728281311887416041
+      cardsLarge_tilemap_packed_26: -5217585384533174435
+      cardsLarge_tilemap_packed_50: -3644547030255575968
+      cardsLarge_tilemap_packed_35: 4718141916790203329
+      cardsLarge_tilemap_packed_3: 919279360087022633
+      cardsLarge_tilemap_packed_36: 1419389419442377266
+      cardsLarge_tilemap_packed_12: -8322251398454967219
+      cardsLarge_tilemap_packed_5: 5947488609121318213
+      cardsLarge_tilemap_packed_30: -7904116857180425084
+      cardsLarge_tilemap_packed_18: 6072601772123366907
+      cardsLarge_tilemap_packed_51: -6369720940250972138
+      cardsLarge_tilemap_packed_1: 9035415278952644170
+      cardsLarge_tilemap_packed_15: 3697048050933076477
+      cardsLarge_tilemap_packed_33: -7210535817312706007
+      cardsLarge_tilemap_packed_41: -922480706503570398
+      cardsLarge_tilemap_packed_4: 8367038623885577094
+      cardsLarge_tilemap_packed_24: -7858865632950441308
+      cardsLarge_tilemap_packed_47: -8321589705789801282
+      cardsLarge_tilemap_packed_46: -755026765528524786
+      cardsLarge_tilemap_packed_48: 7419587236591948484
+      cardsLarge_tilemap_packed_10: 8233795051901754509
+      cardsLarge_tilemap_packed_2: -5060159074613823592
+      cardsLarge_tilemap_packed_9: -2444289490807111468
+      cardsLarge_tilemap_packed_6: 5871898411234216601
+      cardsLarge_tilemap_packed_29: 1791713675843609273
+      cardsLarge_tilemap_packed_25: -9037599304253292888
+      cardsLarge_tilemap_packed_39: -4248774397262740212
+      cardsLarge_tilemap_packed_54: -7579152407438998988
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
