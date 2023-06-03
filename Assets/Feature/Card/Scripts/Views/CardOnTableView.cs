@@ -1,6 +1,6 @@
 ﻿using System;
-using FoolCardGame.Behaviours;
-using FoolCardGame.Behaviours.Abstractions;
+using FoolCardGame.Core;
+using FoolCardGame.Core.Abstractions;
 using FoolCardGame.Card.Abstractions.Views;
 using UnityEngine;
 

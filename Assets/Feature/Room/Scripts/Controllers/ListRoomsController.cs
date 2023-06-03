@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using FoolCardGame.Behaviours;
+using FoolCardGame.Core;
 using FoolCardGame.Network;
 using FoolCardGame.Rooms.Abstractions.Controllers;
 using FoolCardGame.Rooms.Abstractions.Views;

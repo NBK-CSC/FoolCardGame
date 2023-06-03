@@ -1,4 +1,4 @@
-﻿using FoolCardGame.Behaviours.Abstractions;
+﻿using FoolCardGame.Core.Abstractions;
 using FoolCardGame.Card.Abstractions.Views;
 
 namespace FoolCardGame.Card.Behaviours
