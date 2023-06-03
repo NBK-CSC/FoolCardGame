@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using FoolCardGame.Behaviours;
-using FoolCardGame.Behaviours.Abstractions;
+using FoolCardGame.Core;
+using FoolCardGame.Core.Abstractions;
 using FoolCardGame.Card.Abstractions.Controllers;
 using FoolCardGame.Card.Abstractions.Views;
 using FoolCardGame.Table.Abstractions.Views;

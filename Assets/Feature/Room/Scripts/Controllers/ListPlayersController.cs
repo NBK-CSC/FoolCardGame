@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using FoolCardGame.Behaviours;
+using FoolCardGame.Core;
 using FoolCardGame.Network;
 using FoolCardGame.Rooms.Abstractions.Views;
 using UnityEngine;

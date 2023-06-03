@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.EventSystems;
 
-namespace FoolCardGame.Behaviours.Abstractions
+namespace FoolCardGame.Core.Abstractions
 {
     /// <summary>
     /// Детектор объекта с нужным компонентом

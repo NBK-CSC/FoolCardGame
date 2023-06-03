@@ -5,7 +5,7 @@ using FoolCardGame.Card.Controllers;
 using FoolCardGame.Card.Views;
 using UnityEngine;
 
-namespace FoolCardGame.Behaviours
+namespace FoolCardGame.Core
 {
     /// <summary>
     /// Фабрика карт

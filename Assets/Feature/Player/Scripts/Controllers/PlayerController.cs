@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using FoolCardGame.Behaviours;
+using FoolCardGame.Core;
 using FoolCardGame.Card.Abstractions.Models;
 using FoolCardGame.Dealer.Abstractions.Controllers;
 using FoolCardGame.Hand.Controllers;

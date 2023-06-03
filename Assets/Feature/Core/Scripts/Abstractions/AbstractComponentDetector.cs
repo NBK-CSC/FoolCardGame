@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FoolCardGame.Behaviours.Abstractions
+namespace FoolCardGame.Core.Abstractions
 {
     /// <summary>
     /// Абстрация детектора компонентов

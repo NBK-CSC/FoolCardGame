@@ -1,4 +1,6 @@
-﻿using FoolCardGame.Network.Controllers;
+﻿using System;
+using FoolCardGame.Core;
+using FoolCardGame.Network.Controllers;
 using FoolCardGame.Network.Enums;
 using FoolCardGame.Rooms.Abstractions.Controllers;
 using FoolCardGame.Network;
@@ -32,7 +34,7 @@ namespace FoolCardGame.Rooms.Controllers
             if (string.IsNullOrEmpty(response.Config.Id) == false)
             {
                 Debug.LogWarning($"Присоединилось id={response.Config.Id} Name={response.Config.Name} Slots={response.Config.Slots}");
-                _roomController.UpdateRoomData(NetworkMessageController.Instance.LocalId, response);
+                UnityMainThreadDispatcher.Instance().Enqueue(() => _roomController.UpdateRoomData(NetworkMessageController.Instance.LocalId, response));
                 return;
             }
             

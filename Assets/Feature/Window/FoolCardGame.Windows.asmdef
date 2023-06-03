@@ -1,10 +1,7 @@
 {
-    "name": "FoolCardGame.Behaviours",
-    "rootNamespace": "FoolCardGame.Behaviours",
-    "references": [
-        "GUID:8cb9f9f118d61624dab9c40fded2713c",
-        "GUID:3ea0be1b18f160a4da11e92cde1ec610",
-        "GUID:6cb6f25cd51b2574ab122d2d925bc4a6"],
+    "name": "FoolCardGame.Windows",
+    "rootNamespace": "FoolCardGame.Windows",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
