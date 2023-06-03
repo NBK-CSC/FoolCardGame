@@ -1,6 +1,6 @@
 {
-    "name": "FoolCardGame.Behaviours.Abstractions",
-    "rootNamespace": "FoolCardGame.Behaviours.Abstractions",
+    "name": "FoolCardGame.Core.Abstractions",
+    "rootNamespace": "FoolCardGame.Core.Abstractions",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
