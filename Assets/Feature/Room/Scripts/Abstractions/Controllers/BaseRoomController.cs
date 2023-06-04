@@ -15,7 +15,7 @@ namespace FoolCardGame.Rooms.Abstractions.Controllers
         
         protected abstract void OnResponse(T response);
 
-        protected void OnMessageReceived(object? sender, MessageReceivedEventArgs e)
+        protected virtual void OnMessageReceived(object? sender, MessageReceivedEventArgs e)
         {
             if (e.Tag != (ushort) Tag)
                 return;
