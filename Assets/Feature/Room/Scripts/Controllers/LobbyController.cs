@@ -25,6 +25,8 @@ namespace FoolCardGame.Rooms.Controllers
             _createRoomController = new CreateRoomController(createRoomView, _joinRoomController);
             _leaveRoomController = new LeaveRoomController(leaveRoomView, roomController);
             _findRoomsController = new FindRoomsController(findRoomsView, listRoomsController);
+            
+            listRoomsController.Init(_joinRoomController);
         }
     }
 }

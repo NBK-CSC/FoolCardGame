@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using FoolCardGame.Network;
 using FoolCardGame.Rooms.Abstractions.Controllers;
@@ -23,6 +24,7 @@ namespace FoolCardGame.Rooms.Controllers
         [SerializeField] private Window lobbyWindow;
         
         private ListPlayersController _listPlayersController;
+        private IUpdating _updateRoomController;
         
         private void Awake()
         {
@@ -33,6 +35,8 @@ namespace FoolCardGame.Rooms.Controllers
         {
             roomWindow.Open();
             lobbyWindow.Close();
+
+            _updateRoomController ??= new UpdateRoomController(this);
             
             var listWithoutClient = new List<ClientData>(roomData.Clients.Where(c => c.Id != localId));
             _listPlayersController.UpdateList(listWithoutClient);
@@ -42,6 +46,9 @@ namespace FoolCardGame.Rooms.Controllers
         public void Leave()
         {
             roomWindow.Close();
+            if (_updateRoomController is IDisposable disposable)
+                disposable.Dispose();
+            _updateRoomController = null;
         }
     }
 }

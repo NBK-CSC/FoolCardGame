@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DarkRift.Client;
+using FoolCardGame.Core;
 using FoolCardGame.Network;
 using FoolCardGame.Network.Controllers;
 using FoolCardGame.Network.Enums;
@@ -33,7 +34,7 @@ namespace FoolCardGame.Rooms.Controllers
 
         private void OnResponse(IEnumerable<RoomConfig> rooms)
         {
-            _listRoomsController.UpdateList(rooms);
+            UnityMainThreadDispatcher.Instance().Enqueue(() =>_listRoomsController.UpdateList(rooms));
         }
         
         private void OnMessageReceived(object? sender, MessageReceivedEventArgs e)

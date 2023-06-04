@@ -4,8 +4,8 @@ using FoolCardGame.Core;
 using FoolCardGame.Network;
 using FoolCardGame.Rooms.Abstractions.Controllers;
 using FoolCardGame.Rooms.Abstractions.Views;
-using FoolCardGame.Rooms.Views;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace FoolCardGame.Rooms.Controllers
 {
@@ -14,59 +14,81 @@ namespace FoolCardGame.Rooms.Controllers
         [SerializeField] private Transform content;
         [SerializeField] private AbstractRoomElementView roomElementPrefab;
         [SerializeField] private int number = 20;
-        private List<AbstractRoomElementView> _elements;
-
+        [SerializeField] private Button joinRoomButton;
+        [SerializeField] private ToggleGroup toggleGroup;
+        
         private PoolMono<AbstractRoomElementView> _poolMono;
-        //TODO вырезать
-        private bool _isUpdated = true;
-        private IEnumerable<RoomConfig> _rooms;
+        private List<IRoomElementController> _elements;
+
+        private IJoining _joinController;
+        private IRoomElementController _selectRoomElement;
 
         private void Awake()
         {
             _poolMono = new PoolMono<AbstractRoomElementView>(number, roomElementPrefab, content);
-            _elements = new List<AbstractRoomElementView>();
+            _elements = new List<IRoomElementController>();
+        }
+
+        private void OnEnable()
+        {
+            joinRoomButton.onClick.AddListener(Join);
+        }
+
+        private void OnDisable()
+        {
+            joinRoomButton.onClick.RemoveListener(Join);
+        }
+
+        private void Join()
+        {
+            if (_selectRoomElement != null)
+                _joinController.Join(_selectRoomElement.Id);
         }
         
+        public void Init(IJoining joinController)
+        {
+            _joinController = joinController;
+        }
+
         public void UpdateList(IEnumerable<RoomConfig> rooms)
         {
-            _isUpdated = false;
-            _rooms = rooms;
-            return;
             Clear();
             
             foreach (var room in rooms)
             {
-                var roomView = _poolMono.GetFreeObject();
-                roomView.UpdateRoomInfo(room.Name, room.Slots, room.MaxSlots);
-                _elements.Add(roomView);
-            }
-        }
-
-        private void UpdateList()
-        {
-            Clear();
-            
-            foreach (var room in _rooms)
-            {
-                var roomView = _poolMono.GetFreeObject();
-                roomView.UpdateRoomInfo(room.Name, room.Slots, room.MaxSlots);
-                _elements.Add(roomView);
-            }
-        }
-
-        private void Update()
-        {
-            if (_isUpdated == false)
-            {
-                UpdateList();
-                _isUpdated = true;
+                var roomElementController = new RoomElementController(room, _poolMono.GetFreeObject(), toggleGroup);
+                SubscribeSelect(roomElementController);
+                _elements.Add(roomElementController);
             }
         }
 
         private void Clear()
         {
-            _elements.ForEach(x => x.SetActive(false));
+            _elements.ForEach(x =>
+            {
+                if (x is IDisposable disposable)
+                    disposable.Dispose();
+                UnsubscribeSelect(x);
+            });
+            
             _elements.Clear();
+        }
+        
+        private void SubscribeSelect(IRoomElementController selected)
+        {
+            selected.OnSelected += Choose;
+        }
+        
+        private void UnsubscribeSelect(IRoomElementController selected)
+        {
+            selected.OnSelected -= Choose;
+        }
+        
+        private void Choose(IRoomElementController selected)
+        {
+            joinRoomButton.gameObject.SetActive(selected != null);
+                
+            _selectRoomElement = selected;
         }
     }
 }
