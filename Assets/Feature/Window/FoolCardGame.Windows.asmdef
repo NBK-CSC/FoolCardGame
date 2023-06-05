@@ -1,7 +1,7 @@
 {
     "name": "FoolCardGame.Windows",
     "rootNamespace": "FoolCardGame.Windows",
-    "references": [],
+    "references": ["GUID:81d39797c22231847ac6c3393db1ccff"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

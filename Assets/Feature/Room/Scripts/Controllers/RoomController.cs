@@ -4,7 +4,7 @@ using System.Linq;
 using FoolCardGame.Network;
 using FoolCardGame.Rooms.Abstractions.Controllers;
 using FoolCardGame.Rooms.Abstractions.Views;
-using FoolCardGame.Windows.Behaviours;
+using FoolCardGame.Windows.Entities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,8 +33,7 @@ namespace FoolCardGame.Rooms.Controllers
         
         public void UpdateRoomData(string localId, RoomData roomData)
         {
-            roomWindow.Open();
-            lobbyWindow.Close();
+            SetWindow(true);
 
             _updateRoomController ??= new UpdateRoomController(this);
             
@@ -45,10 +44,17 @@ namespace FoolCardGame.Rooms.Controllers
 
         public void Leave()
         {
-            roomWindow.Close();
+            SetWindow(false);
+
             if (_updateRoomController is IDisposable disposable)
                 disposable.Dispose();
             _updateRoomController = null;
+        }
+
+        private void SetWindow(bool state)
+        {
+            roomWindow.SetActive(state);
+            lobbyWindow.SetActive(!state);
         }
     }
 }
