@@ -1,60 +1,98 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using FoolCardGame.Network;
 using FoolCardGame.Rooms.Abstractions.Controllers;
-using FoolCardGame.Rooms.Abstractions.Views;
-using FoolCardGame.Windows.Entities;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace FoolCardGame.Rooms.Controllers
 {
     /// <summary>
     /// Контролер комнаты
     /// </summary>
-    public class RoomController : MonoBehaviour, IRoomController
+    public class RoomController : IRoomController
     {
-        [SerializeField] private int maxCount;
-        [SerializeField] private AbstractPlayerElementView playerElementView;
-        [SerializeField] private Transform playersPanel;
-        //TODO уброть во вью
-        [SerializeField] private Text textNameRoom;
-        [SerializeField] private Window roomWindow;
-        [SerializeField] private Window lobbyWindow;
+        private AbstractRoomView _view;
         
         private ListPlayersController _listPlayersController;
         private IUpdating _updateRoomController;
+        private ILeaving _leaveController;
         
-        private void Awake()
+        private string _localId;
+        private RoomData _roomData;
+        
+        public RoomController(AbstractRoomView view, ILeaving leaveController)
         {
-            _listPlayersController = new ListPlayersController(maxCount, playerElementView, playersPanel);
+            _leaveController = leaveController;
+
+            _view = view;
+            _view.Init(Confirm, Leave);
         }
         
         public void UpdateRoomData(string localId, RoomData roomData)
         {
-            SetWindow(true);
+            _localId = localId;
+            _roomData = roomData;
 
             _updateRoomController ??= new UpdateRoomController(this);
+
+            _view.SetWindowsActive(true);
             
-            var listWithoutClient = new List<ClientData>(roomData.Clients.Where(c => c.Id != localId));
-            _listPlayersController.UpdateList(listWithoutClient);
-            textNameRoom.text = roomData.Config.Name;
+            _view.UpdateRoomInfo(roomData.Config, roomData.Clients.Where(c => c.Id != localId));
+            CheckPlayers();
+            
+            if (roomData.IsStart)
+            {
+                Debug.Log("Start");
+            }
         }
 
-        public void Leave()
+        private void CheckPlayers()
         {
-            SetWindow(false);
+            _view.SwitchConfirmState(_roomData.Config.Slots == _roomData.Config.MaxSlots);
+            
+            if (_roomData.Config.Slots != _roomData.Config.MaxSlots)
+            {
+                if (_roomData.Clients.Find(c => c.Id == _localId).State == false)
+                    return;
+
+                SetPlayerState(false);
+                _updateRoomController.Update(_roomData);
+            }
+        }
+
+        private void Leave()
+        {
+            _view.SetWindowsActive(false);
+            _leaveController.Leave();
 
             if (_updateRoomController is IDisposable disposable)
                 disposable.Dispose();
             _updateRoomController = null;
         }
 
-        private void SetWindow(bool state)
+        private void Confirm()
         {
-            roomWindow.SetActive(state);
-            lobbyWindow.SetActive(!state);
+            SetPlayerState(true);
+            
+            if (_roomData.Clients.All(c => c.State))
+                _roomData.IsStart = true;
+            
+            _updateRoomController.Update(_roomData);
+        }
+
+        private void SetPlayerState(bool state)
+        {
+            for (var i = 0; i < _roomData.Clients.Count; i++)
+            {
+                if (!string.Equals(_roomData.Clients[i].Id, _localId))
+                    continue;
+                
+                var client = _roomData.Clients[i];
+                client.State = state;
+                _roomData.Clients[i] = client;
+                
+                return;
+            }
         }
     }
 }

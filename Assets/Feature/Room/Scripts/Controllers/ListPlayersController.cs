@@ -45,7 +45,7 @@ namespace FoolCardGame.Rooms.Controllers
 
                 _list[i].gameObject.SetActive(true);
                 _list[i].SetName(players[i].Id);
-                
+
                 _list[i].SetStatus(players[i].State);
             }
         }

@@ -10,8 +10,9 @@ namespace FoolCardGame.Rooms.Views
     public class PlayerElementView : AbstractPlayerElementView
     {
         [SerializeField] private Image icon;
-        [SerializeField] private Image stateBackground;
+        [SerializeField] private Slider slider;
         [SerializeField] private Text nameText;
+        [SerializeField] private Image statusImage;
 
         public override void SetImage(byte[] image)
         {
@@ -25,7 +26,7 @@ namespace FoolCardGame.Rooms.Views
 
         public override void SetStatus(bool state)
         {
-            stateBackground.gameObject.SetActive(state);
+            statusImage.gameObject.SetActive(state);
         }
     }
 }

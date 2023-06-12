@@ -11,6 +11,7 @@ namespace FoolCardGame.Network
     {
         public RoomConfig Config;
         public List<ClientData> Clients;
+        public bool IsStart;
 
         /// <summary>
         /// Конструктор
@@ -20,18 +21,21 @@ namespace FoolCardGame.Network
         {
             Config = config;
             Clients = new List<ClientData>(Config.MaxSlots);
+            IsStart = false;
         }
     
         public void Deserialize(DeserializeEvent e)
         {
             Config = e.Reader.ReadSerializable<RoomConfig>();
             Clients = e.Reader.ReadSerializables<ClientData>().ToList();
+            IsStart = e.Reader.ReadBoolean();
         }
 
         public void Serialize(SerializeEvent e)
         {
             e.Writer.Write(Config);
             e.Writer.Write(Clients.ToArray());
+            e.Writer.Write(IsStart);
         }
     }
 }
