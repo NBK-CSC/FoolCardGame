@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  webgl:
+    container_name: webgl
+    image: webgl
+    build: .
+    ports:
+      - "8089:80"
